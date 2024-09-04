@@ -18,8 +18,8 @@ yoloFastestv2::yoloFastestv2()
     nmsThresh = 0.25;
 
     //模型输入尺寸大小
-    inputWidth = 352;
-    inputHeight = 352;
+    inputWidth = 416;
+    inputHeight = 416;
 
     //模型输入输出节点名称
     inputName = "input.1";
@@ -47,7 +47,7 @@ int yoloFastestv2::loadModel(const char* paramPath, const char* binPath)
 {
     printf("Ncnn mode init:\n%s\n%s\n", paramPath, binPath);
 
-    net.opt.num_threads=4;
+    net.opt.num_threads=6;
 
     net.load_param(paramPath);
     net.load_model(binPath);    
